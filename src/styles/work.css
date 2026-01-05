@@ -1,0 +1,127 @@
+.work-section {
+    padding: 100px 5%;
+    min-height: 100vh;
+}
+
+.work-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.work-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.work-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.card-height-1 {
+    grid-row: span 2;
+}
+
+.card-height-2 {
+    grid-row: span 3;
+}
+
+.card-height-3 {
+    grid-row: span 2;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    display: block;
+    text-decoration: none;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.1);
+}
+
+.placeholder-bg {
+    display: none;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+}
+
+.overlay-content {
+    color: white;
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .overlay-content {
+    transform: translateY(0);
+}
+
+.overlay-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.overlay-content p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.view-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.view-link:hover {
+    padding-left: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .work-header h2 {
+        font-size: 2.5rem;
+    }
+}

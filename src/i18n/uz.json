@@ -1,0 +1,33 @@
+{
+  "companyName": "Kompaniya",
+  "worknavbar": "Bizning ishlarimiz",
+  "about": "Biz haqimizda",
+  "services": "Xizmatlar",
+  "contact": "Aloqa",
+  "heroHeader": "Kompaniyamiz bilan kelajakka qadam qo‘ying",
+  "heroSubheader": "Innovatsion yechimlar, ishonchli hamkorlik va professional xizmatlar.\nBiz bilan bog'laning va loyihangizni bugundan boshlang!",
+  "aboutHeader": "Bizning kompaniya",
+  "service": {
+    "title": "Xizmatlarimiz",
+    "mainTitle": "Bizning Xizmatlarimiz",
+
+    "card1": {
+      "title": "Tez va Professional Xizmat",
+      "description": "Mijozlarimizning barcha talablariga mos ravishda yuqori sifatli va tezkor yechimlar taqdim etamiz. Loyihangizni eng qisqa muddatlarda amalga oshirishga kafolat beramiz."
+    },
+
+    "card2": {
+      "title": "Innovatsion va Zamonaviy Yechimlar",
+      "description": "Eng so'nggi texnologiyalar va innovatsion yondashuvlar asosida biznesingiz uchun samarali va unutilmas raqamli mahsulotlar yaratamiz. Kelajakni bugun quring."
+    },
+
+    "card3": {
+      "title": "24/7 To'liq Qo'llab-quvvatlash",
+      "description": "Kunning istalgan vaqtida sizga yordam berishga tayyormiz. Texnik yordam, maslahat va loyihangizni doimiy monitoring qilish — bularning barchasi bizning mas'uliyatimizda."
+    }
+  },
+  "work": {
+    "title": "Bizning ishlarimiz",
+    "mainTitle": "Bizning Ishlarimiz"
+  }
+}
