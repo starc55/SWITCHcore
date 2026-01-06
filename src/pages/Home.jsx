@@ -5,6 +5,8 @@ import About from "./About";
 import Services from "./Services";
 import Work from "./Work";
 import Footer from "../components/layout/Footer";
+import TrustedPage from "../components/common/TrustedPage";
+import HorizontalScroll from "../components/common/HorizontalScroll";
 
 const Home = () => {
   return (
@@ -12,8 +14,10 @@ const Home = () => {
       <Navbar />
       <Header />
       <About />
+      <HorizontalScroll />
       <Services />
       <Work />
+      <TrustedPage />
       <Footer />
     </div>
   );

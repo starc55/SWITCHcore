@@ -62,7 +62,7 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              SWITCHcore
+              SWIFTcore
             </motion.h3>
             <p>
               Innovatsion yechimlar va ishonchli hamkorlik orqali biznesingizni
@@ -158,7 +158,7 @@ const Footer = () => {
             <h4>Biz bilan aloqada bo'ling</h4>
             <div className="contact-info">
               {[
-                { icon: FaEnvelope, text: "info@switchcore.uz" },
+                { icon: FaEnvelope, text: "info@swiftcore.uz" },
                 { icon: FaPhone, text: "+998 99 123 45 67" },
                 { icon: FaMapMarkerAlt, text: "Toshkent, O'zbekiston" },
               ].map((contact, index) => (
@@ -193,7 +193,7 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <p>&copy; {currentYear} SWITCHcore. Barcha huquqlar himoyalangan.</p>
+          <p>&copy; {currentYear} SWIFTcore. Barcha huquqlar himoyalangan.</p>
         </motion.div>
       </motion.div>
     </footer>
