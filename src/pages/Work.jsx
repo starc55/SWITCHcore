@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/ui/SectionTitle";
 import "@/styles/work.css";
@@ -6,63 +7,72 @@ import "@/styles/work.css";
 const projects = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    category: "Web Development",
+    titleKey: "projects.ecommerce.title",
+    categoryKey: "projects.ecommerce.category",
     link: "#",
-    image: "https://pixel77.com/wp-content/uploads/2024/06/ecommerce-website-designs-2-1024x768.webp",
+    image:
+      "https://cdn.dribbble.com/userupload/9000434/file/original-903fac30a0a944a36dcfaeb29e373619.png?format=webp&resize=800x600&vertical=center", // Modern e-commerce
   },
   {
     id: 2,
-    title: "Corporate Branding",
-    category: "Branding",
+    titleKey: "projects.branding.title",
+    categoryKey: "projects.branding.category",
     link: "#",
-    image: "https://excelsiorlevel.com/wp-content/uploads/2021/07/brand-identity-logo-explained1.jpg",
+    image:
+      "https://cdn.dribbble.com/userupload/7250580/file/original-69cf18ac8d332defc569e3b4c0a7fc46.jpg?resize=800x600&vertical=center", // Corporate branding
   },
   {
     id: 3,
-    title: "Mobile Banking App",
-    category: "Mobile App",
+    titleKey: "projects.banking.title",
+    categoryKey: "projects.banking.category",
     link: "#",
-    image: "https://s3-alpha.figma.com/hub/file/3881404495/444efcbe-82e7-4d4c-a1dd-c9c689067349-cover.png",
+    image:
+      "https://cdn.dribbble.com/userupload/27179821/file/original-9dae0043a39c082c004d7a28e53f83f3.png?resize=800x600&vertical=center", // Mobile banking app
   },
   {
     id: 4,
-    title: "Digital Marketing Campaign",
-    category: "Marketing",
+    titleKey: "projects.marketing.title",
+    categoryKey: "projects.marketing.category",
     link: "#",
-    image: "https://www.investopedia.com/thmb/CHEeSQHPK9MJ6TPFZKcFLTa5eqc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SMM_Final_4188900-b14da77d5eee49019768a7b839a19efb.jpg",
+    image: "https://image.adsoftheworld.com/ci6zt8l3i526acrn16hpj8j1gybp", // Creative digital campaign
   },
   {
     id: 5,
-    title: "SaaS Dashboard",
-    category: "UI/UX Design",
+    titleKey: "projects.saas.title",
+    categoryKey: "projects.saas.category",
     link: "#",
-    image: "https://www.bootstrapdash.com/blog/wp-content/uploads/2025/01/staradmin2.jpg",
+    image:
+      "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1708016230/catalog/1515754269054631936/utr7mhe9adj94cva6m3i.webp", // SaaS dashboard
   },
   {
     id: 6,
-    title: "Online Education Portal",
-    category: "Web Development",
+    titleKey: "projects.education.title",
+    categoryKey: "projects.education.category",
     link: "#",
-    image: "https://cdn.dribbble.com/userupload/34352072/file/original-a7c5481373a222720231036490818c06.jpg?format=webp",
+    image:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400/10913e120865113.60ba0b4e2a2a6.png", // Online education platform
   },
   {
     id: 7,
-    title: "Restaurant Website",
-    category: "Web Design",
+    titleKey: "projects.restaurant.title",
+    categoryKey: "projects.restaurant.category",
     link: "#",
-    image: "https://w3-lab.com/wp-content/uploads/2019/09/Screenshot_4.jpg",
+    image:
+      "https://cdn.dribbble.com/userupload/15252935/file/original-318b9c53f3f2b14ed6e013a40541550f.jpg?resize=800x600&vertical=center", // Modern restaurant site
   },
   {
     id: 8,
-    title: "Fitness Tracker App",
-    category: "Mobile App",
+    titleKey: "projects.fitness.title",
+    categoryKey: "projects.fitness.category",
     link: "#",
-    image: "https://cdn.dribbble.com/userupload/13798783/file/original-d9494398aa951c122ccb3e8aa562689a.png?resize=752x&vertical=center",
+    image:
+      "https://cdn.dribbble.com/userupload/13798783/file/original-d9494398aa951c122ccb3e8aa562689a.png?resize=800x600&vertical=center", // Fitness tracker app
   },
 ];
 
 const Work = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="work-section">
       <motion.div
@@ -71,7 +81,7 @@ const Work = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <SectionTitle title="work.title" />
+        <SectionTitle title={t("work.title")} />
       </motion.div>
 
       <div className="projects-grid">
@@ -87,10 +97,11 @@ const Work = () => {
             whileHover={{ y: -10 }}
           >
             <div className="project-image">
-              <img 
-                src={project.image} 
-                alt={project.title}
+              <img
+                src={project.image}
+                alt={t(project.titleKey)}
                 className="project-img"
+                loading="lazy"
               />
             </div>
 
@@ -101,9 +112,9 @@ const Work = () => {
                 transition={{ duration: 0.4 }}
                 className="overlay-content"
               >
-                <h3>{project.title}</h3>
-                <p>{project.category}</p>
-                <span className="view-link">Ko'proq ko'rish →</span>
+                <h3>{t(project.titleKey)}</h3>
+                <p>{t(project.categoryKey)}</p>
+                <span className="view-link">{t("projects.viewMore")}</span>
               </motion.div>
             </motion.div>
           </motion.a>

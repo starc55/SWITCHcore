@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGlobeEurope } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { LiaTimesSolid } from "react-icons/lia";
 import "@/styles/navbar.css";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isLangOpen, setIsLangOpen] = useState(false);
@@ -17,6 +21,7 @@ const Navbar = () => {
   const languages = [
     { code: "uz", label: "O'zbekcha" },
     { code: "ru", label: "Русский" },
+    { code: "en", label: "English" },
   ];
 
   const changeLanguage = (lng) => {
@@ -38,66 +43,113 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
+  const handleScrollTo = useCallback(
+    (sectionId) => {
+      setIsMobileMenuOpen(false);
 
-  const dropdownVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.95,
-      y: -10,
-      transition: {
-        duration: 0.2,
-      },
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-        staggerChildren: 0.07,
-      },
-    },
-  };
+      const performScroll = () => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      };
 
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
-  };
+      if (location.pathname !== "/") {
+        navigate("/");
+        const timer = setTimeout(() => {
+          performScroll();
+        }, 600);
+        return () => clearTimeout(timer);
+      } else {
+        performScroll();
+      }
+    },
+    [location.pathname, navigate]
+  );
 
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.nav
           className="navbar"
-          variants={{
-            visible: { y: 0, opacity: 1 },
-            hidden: { y: -100, opacity: 0 },
-          }}
-          initial="visible"
-          animate="visible"
-          exit="hidden"
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          exit={{ y: -100 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <div className="navbar-container">
             <div className="navbar-content">
-              <Link to="/" className="navbar-logo">
+              <img src={logo} alt="" />
+              <Link
+                to="/"
+                className="navbar-logo"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 SWIFTcore
               </Link>
 
               <div className="navbar-desktop-menu">
-                {["about", "services","worknavbar", "contact"].map((item) => (
-                  <Link key={item} to={`#${item}`} className="navbar-link">
-                    {t(item)}
-                  </Link>
-                ))}
+                <Link
+                  to="/about"
+                  className={`navbar-link ${
+                    location.pathname === "/about" ? "active" : ""
+                  }`}
+                >
+                  <motion.span
+                    whileHover={{ y: -4 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {t("about")}
+                  </motion.span>
+                  {location.pathname === "/about" && (
+                    <motion.div
+                      className="active-underline"
+                      layoutId="navbar-underline"
+                    />
+                  )}
+                </Link>
+
+                <button
+                  onClick={() => handleScrollTo("services")}
+                  className="navbar-link"
+                >
+                  <motion.span
+                    whileHover={{ y: -4 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {t("services")}
+                  </motion.span>
+                </button>
+
+                <button
+                  onClick={() => handleScrollTo("work")}
+                  className="navbar-link"
+                >
+                  <motion.span
+                    whileHover={{ y: -4 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {t("worknavbar")}
+                  </motion.span>
+                </button>
+
+                <button
+                  onClick={() => handleScrollTo("contact")}
+                  className="navbar-link"
+                >
+                  <motion.span
+                    whileHover={{ y: -4 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {t("contact")}
+                  </motion.span>
+                </button>
               </div>
 
               <div className="navbar-actions">
                 <div className="navbar-lang-dropdown">
                   <button
-                    onClick={() => setIsLangOpen((prev) => !prev)}
+                    onClick={() => setIsLangOpen(!isLangOpen)}
                     className="navbar-lang-button"
                   >
                     <FaGlobeEurope className="navbar-icon" />
@@ -107,20 +159,17 @@ const Navbar = () => {
                   <AnimatePresence>
                     {isLangOpen && (
                       <motion.div
-                        variants={dropdownVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit="hidden"
+                        initial={{ opacity: 0, scale: 0.9, y: -10 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.9, y: -10 }}
+                        transition={{ duration: 0.2 }}
                         className="navbar-lang-menu"
                       >
                         {languages.map((lang) => (
                           <motion.button
                             key={lang.code}
-                            variants={itemVariants}
-                            whileHover={{
-                              x: 8,
-                            }}
-                            whileTap={{ scale: 0.98 }}
+                            whileHover={{ x: 10 }}
+                            whileTap={{ scale: 0.95 }}
                             onClick={() => changeLanguage(lang.code)}
                             className="navbar-lang-item"
                           >
@@ -132,11 +181,14 @@ const Navbar = () => {
                   </AnimatePresence>
                 </div>
 
-                <button className="navbar-hamburger" onClick={toggleMobileMenu}>
+                <button
+                  className="navbar-hamburger"
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
                   {isMobileMenuOpen ? (
-                    <LiaTimesSolid />
+                    <LiaTimesSolid size={28} />
                   ) : (
-                    <HiBars3BottomRight />
+                    <HiBars3BottomRight size={28} />
                   )}
                 </button>
               </div>
@@ -148,19 +200,45 @@ const Navbar = () => {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.4 }}
                   className="navbar-mobile-menu"
                 >
-                  {["home", "about", "services", "contact"].map((item) => (
-                    <a
-                      key={item}
-                      href={`#${item}`}
-                      className="navbar-mobile-link"
-                      onClick={toggleMobileMenu}
-                    >
-                      {t(item)}
-                    </a>
-                  ))}
+                  <Link
+                    to="/about"
+                    className="navbar-mobile-link"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <motion.span whileTap={{ scale: 0.95 }}>
+                      {t("about")}
+                    </motion.span>
+                  </Link>
+
+                  <button
+                    onClick={() => handleScrollTo("services")}
+                    className="navbar-mobile-link"
+                  >
+                    <motion.span whileTap={{ scale: 0.95 }}>
+                      {t("services")}
+                    </motion.span>
+                  </button>
+
+                  <button
+                    onClick={() => handleScrollTo("work")}
+                    className="navbar-mobile-link"
+                  >
+                    <motion.span whileTap={{ scale: 0.95 }}>
+                      {t("worknavbar")}
+                    </motion.span>
+                  </button>
+
+                  <button
+                    onClick={() => handleScrollTo("contact")}
+                    className="navbar-mobile-link"
+                  >
+                    <motion.span whileTap={{ scale: 0.95 }}>
+                      {t("contact")}
+                    </motion.span>
+                  </button>
                 </motion.div>
               )}
             </AnimatePresence>

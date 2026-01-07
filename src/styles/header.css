@@ -19,8 +19,8 @@
     margin: 0 auto;
     z-index: 2;
 }
-
-.hero-content {
+ 
+.hero-content-header {
     display: flex;
     flex-direction: column;
     justify-content: center;

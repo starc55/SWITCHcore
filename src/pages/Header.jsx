@@ -24,7 +24,7 @@ const Header = () => {
       <header className="hero-section">
         <div className="hero-container">
           <motion.div
-            className="hero-content"
+            className="hero-content-header"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, ease: "easeOut" }}

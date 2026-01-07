@@ -10,24 +10,149 @@
   "service": {
     "title": "Xizmatlarimiz",
     "mainTitle": "Bizning Xizmatlarimiz",
-
     "card1": {
       "title": "Tez va Professional Xizmat",
       "description": "Mijozlarimizning barcha talablariga mos ravishda yuqori sifatli va tezkor yechimlar taqdim etamiz. Loyihangizni eng qisqa muddatlarda amalga oshirishga kafolat beramiz."
     },
-
     "card2": {
       "title": "Innovatsion va Zamonaviy Yechimlar",
       "description": "Eng so'nggi texnologiyalar va innovatsion yondashuvlar asosida biznesingiz uchun samarali va unutilmas raqamli mahsulotlar yaratamiz. Kelajakni bugun quring."
     },
-
     "card3": {
       "title": "24/7 To'liq Qo'llab-quvvatlash",
       "description": "Kunning istalgan vaqtida sizga yordam berishga tayyormiz. Texnik yordam, maslahat va loyihangizni doimiy monitoring qilish — bularning barchasi bizning mas'uliyatimizda."
     }
   },
   "work": {
-    "title": "Bizning ishlarimiz",
-    "mainTitle": "Bizning Ishlarimiz"
+    "title": "Loyihalarimiz"
+  },
+  "projects": {
+    "ecommerce": {
+      "title": "E-commerce Platforma",
+      "category": "Veb Ishlab Chiqish"
+    },
+    "branding": {
+      "title": "Korporativ Branding",
+      "category": "Brending va Identika"
+    },
+    "banking": {
+      "title": "Mobil Banking Ilovasi",
+      "category": "Mobil Ilova"
+    },
+    "marketing": {
+      "title": "Raqamli Marketing Kampaniyasi",
+      "category": "Marketing"
+    },
+    "saas": {
+      "title": "SaaS Admin Panel",
+      "category": "UI/UX Dizayn"
+    },
+    "education": {
+      "title": "Onlayn Ta'lim Portali",
+      "category": "Veb Ishlab Chiqish"
+    },
+    "restaurant": {
+      "title": "Restoran Veb Sayti",
+      "category": "Veb Dizayn"
+    },
+    "fitness": {
+      "title": "Fitness Tracker Ilova",
+      "category": "Mobil Ilova"
+    },
+    "viewMore": "Ko'proq ko'rish →"
+  },
+  "aboutPage": {
+    "title": "Bizning qadriyatlarimiz",
+    "heroTitle": "Biz Haqimizda",
+    "heroSubtitle": "Innovatsiya va sifat bilan kelajakni qurmoqdamiz",
+    "storyTitle": "Bizning Hikoyamiz",
+    "storyParagraph1": "SWIFTcore 2018-yilda tashkil etilgan bo‘lib, dastlab kichik jamoa sifatida raqamli yechimlar yaratishdan boshlagan. Bugungi kunda biz O‘zbekistonning yetakchi IT kompaniyalaridan birimiz va xalqaro loyihalarda faol ishtirok etamiz.",
+    "storyParagraph2": "Bizning asosiy maqsadimiz – har bir loyihada innovatsion texnologiyalarni qo‘llash, eng yuqori sifatni ta'minlash va mijozlarimizning biznesini raqamli dunyoda muvaffaqiyatli rivojlantirishga yordam berish.",
+    "valuesSectionTitle": "Bizning Qadriyatlarimiz",
+    "values": [
+      {
+        "title": "Innovatsiya",
+        "desc": "Doimiy ravishda yangi texnologiyalar va yondashuvlarni izlab, mijozlarimiz uchun eng ilg‘or yechimlarni yaratamiz",
+        "gradient": "from-cyan-400 to-blue-600",
+        "icon": "🚀"
+      },
+      {
+        "title": "Sifat",
+        "desc": "Har bir loyihada xalqaro standartlarga rioya qilamiz va mukammallikka intilamiz",
+        "gradient": "from-purple-400 to-pink-600",
+        "icon": "💎"
+      },
+      {
+        "title": "Jamoa",
+        "desc": "Tajribali mutaxassislar birgalikda muvaffaqiyatga erishadi – bu bizning kuchimiz",
+        "gradient": "from-green-400 to-teal-600",
+        "icon": "🤝"
+      },
+      {
+        "title": "Mijoz",
+        "desc": "Mijoz mamnuniyati va uzoq muddatli hamkorlik – bizning asosiy ustuvorligimiz",
+        "gradient": "from-orange-400 to-red-600",
+        "icon": "❤️"
+      }
+    ]
+  },
+  "aboutContent": "Biz zamonaviy raqamli yechimlar yaratuvchi innovatsion IT kompaniyamiz. Har bir loyiha orqali mijozlarimizning biznesini yangi bosqichga olib chiqishga intilamiz. Tajribali jamoamiz zamonaviy texnologiyalardan foydalangan holda ishonchli, tez va foydalanuvchilarga qulay mahsulotlar ishlab chiqaradi. Har bir detalga e’tibor berib, sifat va mijozlar ehtiyojlarini birinchi o‘ringa qo‘yamiz. Kelajakni bugun yaratish – bu bizning asosiy maqsadimiz.",
+  "stats": {
+    "mainTitle": {
+      "part1": "Raqamli brend innovatsiyasida",
+      "highlight": "mutaxassislar",
+      "part2": "bilan"
+    },
+    "description": "Biz g‘oyalarni o‘sishga aylantiramiz — mijozlar bilan mustahkam aloqa o‘rnatadigan va ishtirokni oshiradigan raqamli strategiyalar orqali.",
+    "happyClients": "Dunyo bo‘ylab baxtli mijozlar",
+    "growthRate": "O‘rtacha mijoz o‘sish ko‘rsatkichi",
+    "partners": "Ishonchli hamkorlar va homiylar",
+    "experience": "Yillik tajriba"
+  },
+  "partners": {
+    "executive": "IJROCHI HAMKORLAR",
+    "count": "25",
+    "supporters": "hamkor va qo‘llab-quvvatlovchilar"
+  },
+  "contactPage": {
+    "header": "Orzuyingizni bugun quring!",
+    "description": "Bizning tajribali jamoamiz sizning g‘oyalaringizni zamonaviy raqamli yechimlarga aylantirishga tayyor. Tez, ishonchli va innovatsion loyihalar uchun hozir bog‘laning — birgalikda kelajakni yarataylik!",
+    "button": "Boshlash"
+  },
+  "footer": {
+    "description": "Innovatsion yechimlar va ishonchli hamkorlik orqali biznesingizni yangi bosqichga olib chiqamiz.",
+    "quickLinks": {
+      "title": "Tezkor Havolalar"
+    },
+    "servicesTitle": "Xizmatlar",
+    "servicesList": [
+      "Web Dizayn",
+      "Mobil Ilovalar",
+      "Brending",
+      "Digital Marketing",
+      "UI/UX Dizayn"
+    ],
+    "contactTitle": "Biz bilan aloqada bo'ling",
+    "newsletter": {
+      "placeholder": "Email manzilingiz",
+      "button": "Xabaringizni qoldiring"
+    },
+    "copyright": "Barcha huquqlar himoyalangan."
+  },
+  "navbar": {
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "services": "Xizmatlar",
+    "work": "Bizning ishlarimiz",
+    "contact": "Aloqa"
+  },
+  "chat": {
+    "openChat": "Chatni ochish",
+    "close": "Chatni yopish",
+    "headerTitle": "SWIFTcore Yordam",
+    "status": "Biz onlaynmiz",
+    "welcomeMessage": "Salom! 👋 Sizga qanday yordam bera olamiz? Tezda javob beramiz!",
+    "inputPlaceholder": "Xabar yozing...",
+    "send": "Xabar yuborish"
   }
 }

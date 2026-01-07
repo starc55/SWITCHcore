@@ -1,0 +1,158 @@
+{
+  "companyName": "Company",
+  "worknavbar": "Our Works",
+  "about": "About Us",
+  "services": "Services",
+  "contact": "Contact",
+  "heroHeader": "Step into the Future with Our Company",
+  "heroSubheader": "Innovative solutions, reliable partnership, and professional services.\nGet in touch with us and start your project today!",
+  "aboutHeader": "Our Company",
+  "service": {
+    "title": "Our Services",
+    "mainTitle": "Our Services",
+    "card1": {
+      "title": "Fast & Professional Service",
+      "description": "We provide high-quality and prompt solutions tailored to all our clients' requirements. We guarantee the implementation of your project in the shortest possible time."
+    },
+    "card2": {
+      "title": "Innovative & Modern Solutions",
+      "description": "Using the latest technologies and innovative approaches, we create effective and memorable digital products for your business. Build the future today."
+    },
+    "card3": {
+      "title": "24/7 Full Support",
+      "description": "We're ready to assist you at any time of the day. Technical support, consultations, and continuous project monitoring — all of this is our responsibility."
+    }
+  },
+  "work": {
+    "title": "Our Projects"
+  },
+  "projects": {
+    "ecommerce": {
+      "title": "E-commerce Platform",
+      "category": "Web Development"
+    },
+    "branding": {
+      "title": "Corporate Branding",
+      "category": "Branding & Identity"
+    },
+    "banking": {
+      "title": "Mobile Banking App",
+      "category": "Mobile Application"
+    },
+    "marketing": {
+      "title": "Digital Marketing Campaign",
+      "category": "Marketing"
+    },
+    "saas": {
+      "title": "SaaS Admin Panel",
+      "category": "UI/UX Design"
+    },
+    "education": {
+      "title": "Online Education Portal",
+      "category": "Web Development"
+    },
+    "restaurant": {
+      "title": "Restaurant Website",
+      "category": "Web Design"
+    },
+    "fitness": {
+      "title": "Fitness Tracker App",
+      "category": "Mobile Application"
+    },
+    "viewMore": "View More →"
+  },
+  "aboutPage": {
+    "title": "Our Values",
+    "heroTitle": "About Us",
+    "heroSubtitle": "Building the future with innovation and quality",
+    "storyTitle": "Our Story",
+    "storyParagraph1": "SWIFTcore was founded in 2018, initially starting as a small team creating digital solutions. Today, we are one of the leading IT companies in Uzbekistan and actively participate in international projects.",
+    "storyParagraph2": "Our main goal is to apply innovative technologies in every project, ensure the highest quality, and help our clients successfully develop their business in the digital world.",
+    "valuesSectionTitle": "Our Values",
+    "values": [
+      {
+        "title": "Innovation",
+        "desc": "We constantly seek new technologies and approaches to create the most advanced solutions for our clients",
+        "gradient": "from-cyan-400 to-blue-600",
+        "icon": "🚀"
+      },
+      {
+        "title": "Quality",
+        "desc": "We adhere to international standards in every project and strive for perfection",
+        "gradient": "from-purple-400 to-pink-600",
+        "icon": "💎"
+      },
+      {
+        "title": "Team",
+        "desc": "Experienced specialists achieve success together — this is our strength",
+        "gradient": "from-green-400 to-teal-600",
+        "icon": "🤝"
+      },
+      {
+        "title": "Client",
+        "desc": "Client satisfaction and long-term partnership are our top priority",
+        "gradient": "from-orange-400 to-red-600",
+        "icon": "❤️"
+      }
+    ]
+  },
+  "aboutContent": "We are an innovative IT company creating modern digital solutions. Through every project, we strive to take our clients' businesses to the next level. Our experienced team uses cutting-edge technologies to develop reliable, fast, and user-friendly products. We pay attention to every detail, putting quality and client needs first. Creating the future today is our main goal.",
+  "stats": {
+    "mainTitle": {
+      "part1": "Experts in",
+      "highlight": "digital brand",
+      "part2": "innovation"
+    },
+    "description": "We turn ideas into growth — through digital strategies that build strong customer connections and increase engagement.",
+    "happyClients": "Happy Clients Worldwide",
+    "growthRate": "Average Client Growth Rate",
+    "partners": "Trusted Partners & Sponsors",
+    "experience": "Years of Experience"
+  },
+  "partners": {
+    "executive": "EXECUTIVE PARTNERS",
+    "count": "25",
+    "supporters": "partners & supporters"
+  },
+  "contactPage": {
+    "header": "Build Your Dream Today!",
+    "description": "Our experienced team is ready to turn your ideas into modern digital solutions. Fast, reliable, and innovative projects — get in touch now and let's create the future together!",
+    "button": "Get Started"
+  },
+  "footer": {
+    "description": "We take your business to the next level through innovative solutions and reliable partnership.",
+    "quickLinks": {
+      "title": "Quick Links"
+    },
+    "servicesTitle": "Services",
+    "servicesList": [
+      "Web Design",
+      "Mobile Applications",
+      "Branding",
+      "Digital Marketing",
+      "UI/UX Design"
+    ],
+    "contactTitle": "Stay Connected With Us",
+    "newsletter": {
+      "placeholder": "Your email address",
+      "button": "Send Message"
+    },
+    "copyright": "All rights reserved."
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "work": "Our Works",
+    "contact": "Contact"
+  },
+  "chat": {
+    "openChat": "Open Chat",
+    "close": "Close Chat",
+    "headerTitle": "SWIFTcore Support",
+    "status": "We are online",
+    "welcomeMessage": "Hello! 👋 How can we help you? We'll get back to you quickly!",
+    "inputPlaceholder": "Type your message...",
+    "send": "Send"
+  }
+}
