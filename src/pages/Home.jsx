@@ -1,4 +1,6 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/layout/Navbar";
 import Header from "./Header";
 // import AboutSection from "./components/About";
@@ -13,8 +15,14 @@ import Partner from "../components/common/Partner";
 import Contact from "../components/layout/Contact";
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
+      <Helmet>
+        <title>{t("heroHeader")}</title>
+        <meta name="description" content={t("heroSubheader")} />
+      </Helmet>
       <Navbar currentPage="home" />
       <section id="home">
         <Header />

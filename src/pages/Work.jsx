@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import SectionTitle from "@/components/ui/SectionTitle";
 import "@/styles/work.css";
 
@@ -11,7 +12,7 @@ const projects = [
     categoryKey: "projects.ecommerce.category",
     link: "#",
     image:
-      "https://cdn.dribbble.com/userupload/9000434/file/original-903fac30a0a944a36dcfaeb29e373619.png?format=webp&resize=800x600&vertical=center", // Modern e-commerce
+      "https://cdn.dribbble.com/userupload/9000434/file/original-903fac30a0a944a36dcfaeb29e373619.png?format=webp&resize=800x600&vertical=center",
   },
   {
     id: 2,
@@ -19,7 +20,7 @@ const projects = [
     categoryKey: "projects.branding.category",
     link: "#",
     image:
-      "https://cdn.dribbble.com/userupload/7250580/file/original-69cf18ac8d332defc569e3b4c0a7fc46.jpg?resize=800x600&vertical=center", // Corporate branding
+      "https://cdn.dribbble.com/userupload/7250580/file/original-69cf18ac8d332defc569e3b4c0a7fc46.jpg?resize=800x600&vertical=center",
   },
   {
     id: 3,
@@ -27,14 +28,14 @@ const projects = [
     categoryKey: "projects.banking.category",
     link: "#",
     image:
-      "https://cdn.dribbble.com/userupload/27179821/file/original-9dae0043a39c082c004d7a28e53f83f3.png?resize=800x600&vertical=center", // Mobile banking app
+      "https://cdn.dribbble.com/userupload/27179821/file/original-9dae0043a39c082c004d7a28e53f83f3.png?resize=800x600&vertical=center",
   },
   {
     id: 4,
     titleKey: "projects.marketing.title",
     categoryKey: "projects.marketing.category",
     link: "#",
-    image: "https://image.adsoftheworld.com/ci6zt8l3i526acrn16hpj8j1gybp", // Creative digital campaign
+    image: "https://image.adsoftheworld.com/ci6zt8l3i526acrn16hpj8j1gybp",
   },
   {
     id: 5,
@@ -42,7 +43,7 @@ const projects = [
     categoryKey: "projects.saas.category",
     link: "#",
     image:
-      "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1708016230/catalog/1515754269054631936/utr7mhe9adj94cva6m3i.webp", // SaaS dashboard
+      "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1708016230/catalog/1515754269054631936/utr7mhe9adj94cva6m3i.webp",
   },
   {
     id: 6,
@@ -50,7 +51,7 @@ const projects = [
     categoryKey: "projects.education.category",
     link: "#",
     image:
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400/10913e120865113.60ba0b4e2a2a6.png", // Online education platform
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400/10913e120865113.60ba0b4e2a2a6.png",
   },
   {
     id: 7,
@@ -58,7 +59,7 @@ const projects = [
     categoryKey: "projects.restaurant.category",
     link: "#",
     image:
-      "https://cdn.dribbble.com/userupload/15252935/file/original-318b9c53f3f2b14ed6e013a40541550f.jpg?resize=800x600&vertical=center", // Modern restaurant site
+      "https://cdn.dribbble.com/userupload/15252935/file/original-318b9c53f3f2b14ed6e013a40541550f.jpg?resize=800x600&vertical=center",
   },
   {
     id: 8,
@@ -66,15 +67,22 @@ const projects = [
     categoryKey: "projects.fitness.category",
     link: "#",
     image:
-      "https://cdn.dribbble.com/userupload/13798783/file/original-d9494398aa951c122ccb3e8aa562689a.png?resize=800x600&vertical=center", // Fitness tracker app
+      "https://cdn.dribbble.com/userupload/13798783/file/original-d9494398aa951c122ccb3e8aa562689a.png?resize=800x600&vertical=center",
   },
 ];
 
 const Work = () => {
   const { t } = useTranslation();
 
+  const description = projects.map((project) => t(project.titleKey)).join(", ");
+
   return (
     <section className="work-section">
+      <Helmet>
+        <title>{t("work.title")}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

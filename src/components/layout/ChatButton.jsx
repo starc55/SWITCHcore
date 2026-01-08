@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { BsFeather } from "react-icons/bs";
 import "@/styles/chatButton.css";
 
@@ -10,6 +11,11 @@ const ChatButton = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{t("chat.headerTitle")}</title>
+        <meta name="description" content={t("chat.welcomeMessage")} />
+      </Helmet>
+
       <motion.button
         className="chat-fixed-button"
         onClick={() => setIsOpen(!isOpen)}

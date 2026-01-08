@@ -1,6 +1,8 @@
 {
   "companyName": "Kompaniya",
   "worknavbar": "Bizning ishlarimiz",
+  "site_title": "SWIFTcore - Sizning biznesingiz uchun innovatsion IT yechimlari",
+  "site_description": "SWIFTcore - bu sizning biznesingiz uchun zamonaviy va ishonchli IT yechimlarini taqdim etuvchi yetakchi kompaniya. Veb dizayn, mobil ilovalar, brending va raqamli marketing xizmatlarimiz bilan biznesingizni yangi bosqichga olib chiqing.",
   "about": "Biz haqimizda",
   "services": "Xizmatlar",
   "contact": "Aloqa",
@@ -20,7 +22,7 @@
     },
     "card3": {
       "title": "24/7 To'liq Qo'llab-quvvatlash",
-      "description": "Kunning istalgan vaqtida sizga yordam berishga tayyormiz. Texnik yordam, maslahat va loyihangizni doimiy monitoring qilish — bularning barchasi bizning mas'uliyatimizda."
+      "description": "Kunning istalgan vaqtida sizga yordam berishga tayyormiz. Texnik H, maslahat va loyihangizni doimiy monitoring qilish — bularning barchasi bizning mas'uliyatimizda."
     }
   },
   "work": {
@@ -149,7 +151,7 @@
   "chat": {
     "openChat": "Chatni ochish",
     "close": "Chatni yopish",
-    "headerTitle": "SWIFTcore Yordam",
+    "headerTitle": "SWIFTcore",
     "status": "Biz onlaynmiz",
     "welcomeMessage": "Salom! 👋 Sizga qanday yordam bera olamiz? Tezda javob beramiz!",
     "inputPlaceholder": "Xabar yozing...",

@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import {
   FaFacebookF,
   FaTwitter,
@@ -53,6 +54,10 @@ const Footer = () => {
 
   return (
     <footer className="footer-section">
+      <Helmet>
+        <title>SWIFTcore</title>
+        <meta name="description" content={t("footer.description")} />
+      </Helmet>
       <motion.div
         initial="hidden"
         whileInView="visible"

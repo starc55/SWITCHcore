@@ -2,6 +2,7 @@ import React from "react";
 import homeImg from "@/assets/home.svg";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import "@/styles/header.css";
 import Particles from "@/components/common/Particles.jsx";
 
@@ -10,6 +11,11 @@ const Header = () => {
 
   return (
     <div style={{ width: "100%", height: "600px", position: "relative" }}>
+      <Helmet>
+        <title>{t("heroHeader")}</title>
+        <meta name="description" content={t("heroSubheader")} />
+      </Helmet>
+
       <Particles
         particleColors={["#ffffff", "#ffffff"]}
         particleCount={200}

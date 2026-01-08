@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import "@/styles/contact.css";
 import { IoBuildOutline } from "react-icons/io5";
 import Aurora from "@/components/common/Aurora.jsx";
@@ -18,6 +19,10 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
+      <Helmet>
+        <title>{t("contactPage.header")}</title>
+        <meta name="description" content={t("contactPage.description")} />
+      </Helmet>
       <Aurora
         colorStops={["#667eea", "#764ba2", "#f093fb"]}
         blend={0.6}

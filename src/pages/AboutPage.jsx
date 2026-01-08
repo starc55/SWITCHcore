@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import "@/styles/aboutPage.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -44,6 +45,11 @@ const AboutPage = () => {
 
   return (
     <div className="about-page">
+      <Helmet>
+        <title>{t("aboutPage.heroTitle")}</title>
+        <meta name="description" content={t("aboutPage.heroSubtitle")} />
+      </Helmet>
+
       <div className="lightray-background">
         <LightRay
           raysOrigin="top-center"

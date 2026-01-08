@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ServiceCard from "@/components/common/ServiceCard";
 import service from "@/assets/service.svg";
@@ -30,6 +31,16 @@ const Services = () => {
 
   return (
     <section id="services" className="services">
+      <Helmet>
+        <title>{t("service.title")}</title>
+        <meta
+          name="description"
+          content={`${t("service.card1.description")} ${t(
+            "service.card2.description"
+          )} ${t("service.card3.description")}`}
+        />
+      </Helmet>
+
       <SectionTitle title="service.title" />
 
       <div className="services-grid">

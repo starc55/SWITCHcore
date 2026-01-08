@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import "@/styles/about.css";
 
 const About = () => {
@@ -43,6 +44,11 @@ const About = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
+      <Helmet>
+        <title>{t("aboutHeader")}</title>
+        <meta name="description" content={t("aboutContent")} />
+      </Helmet>
+
       <motion.div className="about-head" variants={headerVariants}>
         <p className="about-header">{t("aboutHeader")}</p>
       </motion.div>
