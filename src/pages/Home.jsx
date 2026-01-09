@@ -3,11 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/layout/Navbar";
 import Header from "./Header";
-// import AboutSection from "./components/About";
-import Services from "./Services";
-import Work from "./Work";
 import About from "./About";
-// import Contact from "./components/Contact";
 import TrustedPage from "@/components/common/TrustedPage";
 import HorizontalScroll from "@/components/common/HorizontalScroll";
 import Footer from "@/components/layout/Footer";
@@ -31,12 +27,6 @@ const Home = () => {
         <About />
       </section>
       <HorizontalScroll />
-      <section id="services">
-        <Services />
-      </section>
-      <section id="work">
-        <Work />
-      </section>
       <TrustedPage />
       <section>
         <Partner />

@@ -11,6 +11,8 @@
   "aboutHeader": "Bizning kompaniya",
   "service": {
     "title": "Xizmatlarimiz",
+    "heroTitle": "Sizning biznesingiz uchun IT yechimlari",
+    "heroSubtitle": "Bizning xizmatlar",
     "mainTitle": "Bizning Xizmatlarimiz",
     "card1": {
       "title": "Tez va Professional Xizmat",
@@ -26,7 +28,9 @@
     }
   },
   "work": {
-    "title": "Loyihalarimiz"
+    "title": "Loyihalarimiz",
+    "heroTitle": "Bizning loyihalarimiz",
+    "heroSubtitle": "So'nggi ishlarimizdan namoyishlar"
   },
   "projects": {
     "ecommerce": {
@@ -156,5 +160,14 @@
     "welcomeMessage": "Salom! 👋 Sizga qanday yordam bera olamiz? Tezda javob beramiz!",
     "inputPlaceholder": "Xabar yozing...",
     "send": "Xabar yuborish"
-  }
+  },
+  "contactModal": "Aloqa",
+  "orderFormTitle": "Buyurtma berish",
+  "nameLabel": "Ism",
+  "namePlaceholder": "Ismingizni kiriting",
+  "contactLabel": "Aloqa (Telegram / Email ...)",
+  "contactPlaceholder": "Siz bilan qanday aloqaga chiqishimiz mumkin?",
+  "messageLabel": "Xabar",
+  "messagePlaceholder": "Xabaringizni yozing",
+  "submitButton": "Yuborish"
 }

@@ -2,8 +2,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import SectionTitle from "@/components/ui/SectionTitle";
 import "@/styles/work.css";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import LightRay from "@/components/common/LightRay";
 
 const projects = [
   {
@@ -77,58 +79,93 @@ const Work = () => {
   const description = projects.map((project) => t(project.titleKey)).join(", ");
 
   return (
-    <section className="work-section">
+    <div className="work-page">
       <Helmet>
         <title>{t("work.title")}</title>
         <meta name="description" content={description} />
       </Helmet>
 
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <SectionTitle title={t("work.title")} />
-      </motion.div>
-
-      <div className="projects-grid">
-        {projects.map((project, index) => (
-          <motion.a
-            key={project.id}
-            href={project.link}
-            className={`project-card card-height-${(index % 3) + 1}`}
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -10 }}
-          >
-            <div className="project-image">
-              <img
-                src={project.image}
-                alt={t(project.titleKey)}
-                className="project-img"
-                loading="lazy"
-              />
-            </div>
-
-            <motion.div className="project-overlay">
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.4 }}
-                className="overlay-content"
-              >
-                <h3>{t(project.titleKey)}</h3>
-                <p>{t(project.categoryKey)}</p>
-                <span className="view-link">{t("projects.viewMore")}</span>
-              </motion.div>
-            </motion.div>
-          </motion.a>
-        ))}
+      <div className="lightray-background">
+        <LightRay
+          raysOrigin="top-center"
+          raysColor="#00ffff"
+          raysSpeed={1.5}
+          lightSpread={1}
+          rayLength={3}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+        />
       </div>
-    </section>
+
+      <Navbar />
+
+      <motion.section
+        className="hero"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      >
+        <div className="hero-content">
+          <motion.h1
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            {t("work.heroTitle")}
+          </motion.h1>
+          <motion.p
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          >
+            {t("work.heroSubtitle")}
+          </motion.p>
+        </div>
+      </motion.section>
+
+      <section className="work-section">
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <motion.a
+              key={project.id}
+              href={project.link}
+              className={`project-card card-height-${(index % 3) + 1}`}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10 }}
+            >
+              <div className="project-image">
+                <img
+                  src={project.image}
+                  alt={t(project.titleKey)}
+                  className="project-img"
+                  loading="lazy"
+                />
+              </div>
+
+              <motion.div className="project-overlay">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className="overlay-content"
+                >
+                  <h3>{t(project.titleKey)}</h3>
+                  <p>{t(project.categoryKey)}</p>
+                  <span className="view-link">{t("projects.viewMore")}</span>
+                </motion.div>
+              </motion.div>
+            </motion.a>
+          ))}
+        </div>
+      </section>
+
+      <Footer />
+    </div>
   );
 };
 

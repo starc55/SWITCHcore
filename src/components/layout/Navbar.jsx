@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGlobeEurope } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { LiaTimesSolid } from "react-icons/lia";
 import { Helmet } from "react-helmet-async";
@@ -13,7 +13,6 @@ import logo from "@/assets/logo.webp";
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
-  const navigate = useNavigate();
 
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -57,28 +56,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
-
-  const handleScrollTo = useCallback(
-    (sectionId) => {
-      setIsMobileMenuOpen(false);
-
-      const performScroll = () => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      };
-
-      if (location.pathname !== "/") {
-        navigate("/");
-        const timer = setTimeout(performScroll, 600);
-        return () => clearTimeout(timer);
-      } else {
-        performScroll();
-      }
-    },
-    [location.pathname, navigate]
-  );
 
   useEffect(() => {
     const closeMenus = (e) => {
@@ -187,20 +164,27 @@ const Navbar = () => {
                     )}
                   </Link>
 
-                  {["services", "work", "contact"].map((section) => (
-                    <button
-                      key={section}
-                      onClick={() => handleScrollTo(section)}
-                      className="navbar-link"
-                    >
-                      <motion.span
-                        whileHover={{ y: -4 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        {t(section === "work" ? "worknavbar" : section)}
-                      </motion.span>
-                    </button>
-                  ))}
+                  <Link
+                    to="/services"
+                    className={`navbar-link ${
+                      location.pathname === "/services" ? "active" : ""
+                    }`}
+                  >
+                    <motion.span whileHover={{ y: -4 }}>
+                      {t("services")}
+                    </motion.span>
+                  </Link>
+
+                  <Link
+                    to="/projects"
+                    className={`navbar-link ${
+                      location.pathname === "/work" ? "active" : ""
+                    }`}
+                  >
+                    <motion.span whileHover={{ y: -4 }}>
+                      {t("worknavbar")}
+                    </motion.span>
+                  </Link>
                 </div>
 
                 <div className="navbar-actions">
@@ -281,17 +265,27 @@ const Navbar = () => {
                       </motion.span>
                     </Link>
 
-                    {["services", "work", "contact"].map((section) => (
-                      <button
-                        key={section}
-                        onClick={() => handleScrollTo(section)}
-                        className="navbar-mobile-link"
-                      >
-                        <motion.span whileTap={{ scale: 0.95 }}>
-                          {t(section === "work" ? "worknavbar" : section)}
-                        </motion.span>
-                      </button>
-                    ))}
+                    <Link
+                      to="/services"
+                      className={`navbar-link ${
+                        location.pathname === "/services" ? "active" : ""
+                      }`}
+                    >
+                      <motion.span whileHover={{ y: -4 }}>
+                        {t("services")}
+                      </motion.span>
+                    </Link>
+
+                    <Link
+                      to="/projects"
+                      className={`navbar-link ${
+                        location.pathname === "/work" ? "active" : ""
+                      }`}
+                    >
+                      <motion.span whileHover={{ y: -4 }}>
+                        {t("worknavbar")}
+                      </motion.span>
+                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>

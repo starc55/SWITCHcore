@@ -11,6 +11,8 @@
   "aboutHeader": "Our Company",
   "service": {
     "title": "Our Services",
+    "heroTitle": "IT solutions for your business",
+    "heroSubtitle": "Our services",
     "mainTitle": "Our Services",
     "card1": {
       "title": "Fast & Professional Service",
@@ -26,7 +28,9 @@
     }
   },
   "work": {
-    "title": "Our Projects"
+    "title": "Our Projects",
+    "heroTitle": "Our Projects",
+    "heroSubtitle": "Demonstrations from our latest work"
   },
   "projects": {
     "ecommerce": {
@@ -156,5 +160,14 @@
     "welcomeMessage": "Hello! 👋 How can we help you? We'll get back to you quickly!",
     "inputPlaceholder": "Type your message...",
     "send": "Send"
-  }
+  },
+  "contactModal": "Contact",
+  "orderFormTitle": "Place an order",
+  "nameLabel": "Name",
+  "namePlaceholder": "Enter your name",
+  "contactLabel": "Contact (Telegram / Email ...)",
+  "contactPlaceholder": "How can we contact you?",
+  "messageLabel": "Message",
+  "messagePlaceholder": "Write your message",
+  "submitButton": "Submit"
 }

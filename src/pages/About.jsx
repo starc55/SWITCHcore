@@ -38,7 +38,7 @@ const About = () => {
   return (
     <motion.div
       id="about"
-      className="about"
+      className="about" 
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"

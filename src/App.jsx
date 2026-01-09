@@ -5,6 +5,9 @@ import "@/App.css";
 import Home from "@/pages/Home";
 import AboutPage from "./pages/AboutPage";
 import ChatButton from "./components/layout/ChatButton";
+import Services from "./pages/Services";
+import Work from "./pages/Work";
+import ContactModal from "./components/layout/ContactModal";
 
 function App() {
   const { t } = useTranslation();
@@ -18,7 +21,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/projects" element={<Work />} />
       </Routes>
+      <ContactModal />
       <ChatButton />
     </Router>
   );
